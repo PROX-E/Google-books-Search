@@ -10,3 +10,18 @@ export function Container({ fluid, children }) {
 export function Row({ fluid, children }) {
     return <div className={`row${fluid ? "-fluid" : ""}`}>{children}</div>;
   }
+
+  
+// Col component allows for sizing bootstrap columns with less syntax
+export function Col({ size, children }) {
+    return (
+      <div
+        className={size
+          .split(" ")
+          .map(size => "col-" + size)
+          .join(" ")}
+      >
+        {children}
+      </div>
+    );
+  }
