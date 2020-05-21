@@ -23,6 +23,16 @@ class SaveBook extends Component {
             .catch(err => console.log(err))
     }
 
+    render() {
+        return (
+            <Container fluid className="container">
+                <Jumbotron />
+                <Container>
+                    <SavedResult savedBooks={this.state.savedBooks} handleDeleteButton={this.handleDeleteButton} />
+                </Container>
+            </Container>
+        )
+    }
 }
 
 
