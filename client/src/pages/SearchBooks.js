@@ -63,7 +63,29 @@ class SearchBooks extends Component {
             .then(this.setState({ message: alert("Your book is saved") }))
             .catch(err => console.log(err))
     }
-    
+    render() {
+        return (
+            <Container fluid>
+                <Jumbotron>
+                    <h1 className="text-white">Find Your Favorite Books with GoogleBook API</h1>
+                </Jumbotron>
+                <Container>
+                    <Row>
+                        <Col size="12">
+                            <SearchForm
+                                handleFormSubmit={this.handleFormSubmit}
+                                handleInputChange={this.handleInputChange}
+                            />
+                        </Col>
+                    </Row>
+                </Container>
+                <br></br>
+                <Container>
+                    <SearchResult books={this.state.books} handleSavedButton={this.handleSavedButton} />
+                </Container>
+            </Container>
+        )
+    }
 
 
 }
