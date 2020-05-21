@@ -20,7 +20,27 @@ class SearchBooks extends Component {
         this.setState({ search: event.target.value })
     }
 
-
+    //function to control the submit button of the search form 
+    handleFormSubmit = event => {
+        event.preventDefault();
+        // once it clicks it connects to the google book api with the search value
+        API.getGoogleSearchBooks(this.state.search)
+            .then(res => {
+                if (res.data.items === "error") {
+                    throw new Error(res.data.items);
+                }
+                else {
+                    // store response in a array
+                    let results = res.data.items
+                    
+                        return result;
+                    
+                    // reset the sate of the empty books array to the new arrays of objects with properties geting back from the response
+                    this.setState({ books: results, error: "" })
+                }
+            })
+            .catch(err => this.setState({ error: err.items }));
+    }
 
 }
 
