@@ -15,3 +15,15 @@ const bookSeed = {
     link: "http://books.google.com/books?id=sazytgAACAAJ&dq=title:The+Eleventh+Plague&hl=&source=gbs_api",
     title: "The Eleventh Plague",
 }
+
+db.Book
+  .remove({})
+  .then(() => db.Book.collection.insertMany(bookSeed))
+  .then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
