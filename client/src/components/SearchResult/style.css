@@ -1,11 +1,11 @@
 .card{
     border-radius: 10px;
-    background-color: lightgrey
+    background-color: black
 }
 
 .search-list{
     border-radius: 15px;
-    background-color: lightblue
+    background-color: rgb(255, 255, 255)
 }
 
 .saveBook {

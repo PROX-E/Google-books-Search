@@ -15,7 +15,7 @@ const SearchResult = props => {
             <div className="card">
                 <div className="card-body player">
                     <div className="article">
-                        <h3>Search Results</h3>
+                        <h3 className ="text-white">Search Results</h3>
                         {props.books.map(book => {
                             return (
                                 <li className="search-list list-group-item">
@@ -40,7 +40,7 @@ const SearchResult = props => {
                                     </Row>
                                     <br></br>
                                     <Row className="buttonDiv ">
-                                        <button className="saveBook btn btn-primary" id={book.id} onClick={(event) => props.handleSavedButton(event)}>
+                                        <button className="saveBook btn btn-warning" id={book.id} onClick={(event) => props.handleSavedButton(event)}>
                                             Save Book
                                         </button>
                                         <a href={book.link} target="_blank">
