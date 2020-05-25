@@ -1,10 +1,10 @@
 .jumbotron{
+    background-image: url("./bookshelf.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 300px; 
     width: 100%;
     padding-top: 10; 
     text-align: center
-    /* background-image: url("./bookshelf.jpg"); add later?
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat; */
 }
