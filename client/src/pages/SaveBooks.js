@@ -9,7 +9,7 @@ class SaveBook extends Component {
         savedBooks: []
     };
 
-    //when this component mounts, grab all books that were save to the database 
+    //when this component mounts, grab all books that were saved to the database 
     componentDidMount() {
         API.getBooks()
             .then(res => this.setState({ savedBooks: res.data }))
@@ -27,8 +27,23 @@ class SaveBook extends Component {
         return (
             <Container fluid className="container">
                 <Jumbotron />
-                <Container>
-                    <SavedResult savedBooks={this.state.savedBooks} handleDeleteButton={this.handleDeleteButton} />
+                <Container> 
+                {this.state.savedBooks.map(book => {
+                  console.log(book)
+                  return (
+                    <div>
+                      <SavedResult
+                        key={book._id}
+                        authors={book.authors}
+                        title={book.title}
+                        synopsis={book.synopsis}
+                        link={book.link}
+                        thumbnail={book.thumbnail}
+                        handleDeleteButton={this.handleDeleteButton()} 
+                      />
+                    </div>
+                  )
+                })}
                 </Container>
             </Container>
         )
